@@ -21,13 +21,12 @@
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-
-        <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
 
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner">
@@ -37,70 +36,137 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="#">Project name</a>
+                    <a class="brand" href="#">HTML5 Live</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            <li class="active"><a href="/">Home</a></li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Overview <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
+                                    <li><a href="/sections/doctype">What is HTML5?</a></li>
+                                    <li><a href="/sections/doctype">&lt;!DOCTYPE&gt;</a></li>
+                                    <li><a href="/sections/semantic">Semantic &lt;div&gt; tags</a></li>
+                                    <li><a href="/sections/input">New &lt;input&gt; types</a></li>
                                     <li class="divider"></li>
-                                    <li class="nav-header">Nav header</li>
+                                    <li class="nav-header">Header</li>
                                     <li><a href="#">Separated link</a></li>
                                     <li><a href="#">One more separated link</a></li>
                                 </ul>
                             </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Semantic Divs <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/sections/layout">sample layout</a></li>
+                                    <li><a href="/sections/section">&lt;section&gt;</a></li>
+                                    <li><a href="/sections/aside">&lt;aside&gt;</a></li>
+                                    <li><a href="/sections/header">&lt;header&gt;</a></li>
+                                    <li><a href="/sections/footer">&lt;footer&gt;</a></li>
+                                    <li><a href="/sections/nav">&lt;nav&gt;</a></li>
+                                    <li><a href="/sections/dialog">&lt;dialog&gt;</a></li>
+                                    <li><a href="/sections/figure">&lt;figure&gt;</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Input Types <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/sections/input">all inputs</a></li>
+                                    <li><a href="/sections/number">number</a></li>
+                                    <li><a href="/sections/range">range</a></li>
+                                    <li><a href="/sections/email">email</a></li>
+                                    <li><a href="/sections/url">url</a></li>
+                                    <li class="nav-header">Time Inputs</li>
+                                    <li><a href="/sections/datetime">datetime</a></li>
+                                    <li><a href="/sections/datetime-local">datetime-local</a></li>
+                                    <li><a href="/sections/date">date</a></li>
+                                    <li><a href="/sections/month">month</a></li>
+                                    <li><a href="/sections/week">week</a></li>
+                                    <li><a href="/sections/time">time</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Multimedia <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-header">Graphics</li>
+                                    <li><a href="/sections/canvas2d">&lt;canvas&gt; - 2D</a></li>
+                                    <li><a href="/sections/canvas3d">&lt;canvas&gt; - 3D</a></li>
+                                    <li><a href="/sections/svg">&lt;svg&gt;</a></li>
+                                    <!--<li><a href="http://browserquest.mozilla.org/">BrowserQuest.com</a></li>
+                                    <li><a href="http://wheelspoking.com/Build.aspx?Mode=Basic">Wheelspoking.com</a></li>-->
+                                    <li class="nav-header">External</li>
+                                    <li><a href="/sections/audio">&lt;audio&gt;</a></li>
+                                    <li><a href="/sections/video">&lt;video&gt;</a></li>
+                                    <li><a href="/sections/embed">&lt;embed&gt;</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/sections/global">New Global Attributes</a></li>
+                                    <li><a href="/sections/appCache">AppCache - Offline Support</a></li>
+                                    <li><a href="/sections/localStorage">localStorage</a></li>
+                                    <li><a href="/sections/sessionStorage">sessionStorage</a></li>
+                                    <li><a href="/sections/geoLocation">geolocation</a></li>
+                                    <li><a href="/sections/removed">removed</a></li>
+                                    <li class="nav-header">Data</li>
+                                    <li><a href="/sections/meter">meter</a></li>
+                                    <li><a href="/sections/time">time</a></li>
+                                    <li><a href="/sections/datagrid">datagrid</a></li>
+                                    <li><a href="/sections/details">details</a></li>
+                                    <li><a href="/sections/datalist">datalist</a></li>
+                                    <li><a href="/sections/output">output</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/contact">Contact</a></li>
                         </ul>
-                        <form class="navbar-form pull-right">
+                        <!--<form class="navbar-form pull-right">
                             <input class="span2" type="text" placeholder="Email">
                             <input class="span2" type="password" placeholder="Password">
                             <button type="submit" class="btn">Sign in</button>
-                        </form>
-                    </div><!--/.nav-collapse -->
+                        </form>-->
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="container">
+        <div id="swap" class="container">
 
             <!-- Main hero unit for a primary marketing message or call to action -->
             <div class="hero-unit">
-                <h1>Hello, world!</h1>
-                <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-                <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+                <h1>HTML5 - Live!</h1>
+                <p>Interactive Demos of HTML5 yumminess.</p>
+                <p><a class="btn btn-primary btn-large">Start Now &raquo;</a></p>
             </div>
 
-            <!-- Example row of columns -->
+        </div> <!-- /container -->
+
+        <div class="container">
+
             <div class="row">
                 <div class="span4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn" href="#">View details &raquo;</a></p>
+                    <h2>&lt;canvas&gt;</h2>
+                    <p>The Canvas element is a raster graphics based drawing control. See what you can do with it!</p>
+                    <p><a class="btn" href="/sections/canvas2d">View Live &raquo;</a></p>
                 </div>
                 <div class="span4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn" href="#">View details &raquo;</a></p>
+                    <h2>Input Types</h2>
+                    <p>Many new &lt;input&gt; types were introduced in HTML5, many with mobile support.</p>
+                    <p><a class="btn" href="/sections/input">View Live &raquo;</a></p>
                </div>
                 <div class="span4">
-                    <h2>Heading</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <p><a class="btn" href="#">View details &raquo;</a></p>
+                    <h2>Sample Layout</h2>
+                    <p>Semantic divs have been added to help provide context to frequent uses of the &lt;div&gy; tag. See a sample layout</p>
+                    <p><a class="btn" href="/sections/layout">View Live &raquo;</a></p>
                 </div>
             </div>
 
             <hr>
 
-            <footer>
-                <p>&copy; Company 2012</p>
+            <footer style="text-align:center;">
+                <p>&copy; Eric Menze 2013</p>
             </footer>
 
-        </div> <!-- /container -->
+        </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
@@ -109,6 +175,8 @@
 
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+
+        <!--<script src="js/swapr.js"></script>-->
 
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
