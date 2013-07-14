@@ -10,23 +10,25 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
         <style>
             body {
                 padding-top: 60px;
                 padding-bottom: 40px;
             }
         </style>
-        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="/css/main.css">
 
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
+
+        <div id="loading"></div>
 
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner">
@@ -106,7 +108,9 @@
                                     <li><a href="/sections/localStorage">localStorage</a></li>
                                     <li><a href="/sections/sessionStorage">sessionStorage</a></li>
                                     <li><a href="/sections/geoLocation">geolocation</a></li>
+                                    <li><a href="/sections/drag-and-drop">drag-and-drop</a></li>
                                     <li><a href="/sections/removed">removed</a></li>
+                                    <li><a href="/sections/css3">CSS3</a></li>
                                     <li class="nav-header">Data</li>
                                     <li><a href="/sections/meter">meter</a></li>
                                     <li><a href="/sections/time">time</a></li>
@@ -133,7 +137,7 @@
 
             <!-- Main hero unit for a primary marketing message or call to action -->
             <div class="hero-unit">
-                <h1>HTML5 - Live!</h1>
+                <h2>HTML5 - Live!</h2>
                 <p>Interactive Demos of HTML5 yumminess.</p>
                 <p><a class="btn btn-primary btn-large">Start Now &raquo;</a></p>
             </div>
@@ -142,21 +146,23 @@
 
         <div class="container">
 
+            <hr>
+
             <div class="row">
-                <div class="span4">
+                <div class="span4 box">
                     <h2>&lt;canvas&gt;</h2>
                     <p>The Canvas element is a raster graphics based drawing control. See what you can do with it!</p>
-                    <p><a class="btn" href="/sections/canvas2d">View Live &raquo;</a></p>
+                    <p><a class="btn btn-success" href="/sections/canvas2d">View Live &raquo;</a></p>
                 </div>
-                <div class="span4">
-                    <h2>Input Types</h2>
-                    <p>Many new &lt;input&gt; types were introduced in HTML5, many with mobile support.</p>
-                    <p><a class="btn" href="/sections/input">View Live &raquo;</a></p>
+                <div class="span4 box">
+                    <h2>New Input Types</h2>
+                    <p>Many new &lt;input&gt; types were introduced in HTML5, be sure to use them.</p>
+                    <p><a class="btn btn-success" href="/sections/input">View Live &raquo;</a></p>
                </div>
-                <div class="span4">
+                <div class="span4 box">
                     <h2>Sample Layout</h2>
-                    <p>Semantic divs have been added to help provide context to frequent uses of the &lt;div&gy; tag. See a sample layout</p>
-                    <p><a class="btn" href="/sections/layout">View Live &raquo;</a></p>
+                    <p>Semantic divs have been added to help provide context to frequent uses of the &lt;div&gt; tag. See a sample layout</p>
+                    <p><a class="btn btn-success" href="/sections/layout">View Live &raquo;</a></p>
                 </div>
             </div>
 
@@ -169,14 +175,14 @@
         </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
 
-        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="/js/vendor/bootstrap.min.js"></script>
 
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script src="/js/plugins.js"></script>
+        <script src="/js/main.js"></script>
 
-        <!--<script src="js/swapr.js"></script>-->
+        <script src="/js/swapr.js"></script>
 
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
