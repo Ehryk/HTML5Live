@@ -4,19 +4,79 @@
    Author's custom styles
    ========================================================================== */
 
+#loading{
+	background: url('/img/ajax-loader.gif') no-repeat scroll 50% 50% transparent;
+	height: 40px; width: 40px;
+	float: left;
+	margin-top: -20px;
+	margin-left: 10px;
+	display: none;
+}
 
+.live{
+	float:left;
+	text-align: center;
+	margin: 2%;
+	width:45%;
+	border:1px solid #dddddd;
+	background-color: #eeeeee;
+  	-webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
 
+}
 
+.live-input{
+	padding-bottom: 10px;
+}
 
+.live-output{
+	padding-bottom: 30px;
+}
 
+.code{
+	width:90% !important;
+	padding: 5px;
+	font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+	margin-bottom: 10px;
+	background-color: #ffffff;
+	overflow: auto;
+	width: auto;
+}
 
+.details{
+	float:left;
+	width:94%;
+	margin-left:2%;
+	padding:2px;
+	padding-left:10px;
+	border:1px solid #dddddd;
+	background-color: #eeeeee;
+  	-webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
 
+.details p{
+	font-size:smaller;
+	padding:0px;
+	margin:0px;
+}
 
+#update{
+	float:right;
+	margin-right:20px;
+}
 
+#save{
+	float:left;
+	margin-left:20px;
+}
 
+#reset{
+	float:left;
+	margin-left:20px;
+}
 
-
-
-
-
-
+.box{
+}
