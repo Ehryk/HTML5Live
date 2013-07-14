@@ -1,0 +1,98 @@
+
+<div class="row">
+
+	<div class="live live-input">
+		<h3>Code</h3>
+	    <textarea id="html" class="code" rows="20" spellcheck="false"></textarea>
+        <a id="update" href="#" class="btn btn-success">Update &raquo;</a>
+        <a id="reset" class="btn btn-danger">Reset</a>
+        <a id="save" href="#" class="btn btn-primary">Save</a>
+	</div>
+
+	<div class="live live-output">
+		<h3>Result</h3>
+	    <div id="control">
+<canvas id="canvas" style="text-align:center;border:1px solid blue;width:90%;background-color:#FFFFFF;" title="" unselectable="on">
+ Your browser does not support HTML5
+</canvas>
+
+<script>
+ var canvas = document.getElementById("canvas");
+ var context = canvas.getContext('2d');
+ context.strokeStyle = '#000000';
+ context.strokeRect(100, 50, 25, 25);
+ context.fillStyle = '#FF0000';
+ context.fillRect(100, 50, 25, 25);
+
+ context.fillStyle = "#0000FF";
+ context.beginPath();
+ context.arc(200, 90, 50, 0, 2*Math.PI, false);
+ context.closePath();
+ context.fill();
+</script>
+	    </div>
+	</div>
+
+	<input id="original" type="hidden" />
+
+	<div class="details">
+		<h6>For Further Information:</h6>
+		<p>21 Great Examples of Canvas Usage: <a href="http://net.tutsplus.com/articles/web-roundups/21-ridiculously-impressive-html5-canvas-experiments/">http://net.tutsplus.com/articles/web-roundups/21-ridiculously-impressive-html5-canvas-experiments/</a></p>
+		<p>Building Bicycle Wheels: <a href="http://wheelspoking.com/Build.aspx?Mode=Basic">http://wheelspoking.com/Build.aspx?Mode=Basic</a></p>
+		<p>Full Canvas Tutorial: <a href="http://www.html5canvastutorials.com/tutorials/html5-canvas-tutorials-introduction/">http://www.html5canvastutorials.com/tutorials/html5-canvas-tutorials-introduction/</a></p>
+		<p>W3C Reference: <a href="http://www.w3schools.com/tags/ref_canvas.asp">http://www.w3schools.com/tags/ref_canvas.asp</a></p>
+		<p>W3C Example: <a href="http://www.w3schools.com/html/html5_canvas.asp">http://www.w3schools.com/html/html5_canvas.asp</a></p>
+		<p>Full Blown Browser Game using Canvas and HTML5: <a href="http://browserquest.mozilla.org/">http://browserquest.mozilla.org/</a></p>
+	</div>
+
+</div>
+
+<script>
+	var original = $('#control').html().trim(); 
+	$('#html').text(original);
+	$('#original').val(original);
+
+	//Try to load last saved value
+	if (Modernizr.localstorage) {
+		var code = localStorage.getItem("canvas2d");
+		if (code != null) {
+			$('#control').html(code);
+			$('#html').val(code);
+		}
+	}
+
+	$("#update").click(function(e) {
+		var code = $('#html').val(); 
+		$('#control').html(code);
+		addEvents();
+        e.preventDefault();
+	});
+
+	$("#reset").click(function(e) {
+		var code = $('#original').val();
+		$('#control').html(code);
+		$('#html').val(code);
+		addEvents();
+        e.preventDefault();
+	});
+
+	if (!Modernizr.localstorage) {
+		$("#save").css("btn");
+	} else {
+		$("#save").click(function(e) {
+			var code = $('#html').val(); 
+			localStorage.setItem("canvas2d", code);
+        	e.preventDefault();
+		});
+	}
+
+	function addEvents() {
+		try {
+		}
+		catch (e) {
+			console.log('Error adding events: ' + e.message);
+		}
+	};
+	addEvents();
+
+</script>
