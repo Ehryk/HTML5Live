@@ -257,6 +257,16 @@ AddDefaultCharset utf-8
 # </IfModule>
 
 
+# ------------------------------------------------------------------------------
+# | Set up HTML5Live Single Page Application                                   |
+# ------------------------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+    #TODO: Write Equivalent to IIS Redirect: Anything without a . in path goes to index.html
+    #RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    #RewriteRule ^/?old([a-z/.]*)$ /new$1 [R=301,L]
+</IfModule>
+
 # ##############################################################################
 # # SECURITY                                                                   #
 # ##############################################################################
