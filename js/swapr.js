@@ -24,6 +24,7 @@ function checkRewrite() {
         });
     }
 };
+checkRewrite();
 
 // window.Swapr = (function (container, elements, progress, extension, debug) {
 
@@ -80,6 +81,17 @@ function checkRewrite() {
 
 $(function(){
     $('.nav .dropdown-menu li a').click(function (e) {
+        $("#loading").show();
+        href = $(this).attr("href");
+
+        loadContent(href);
+
+        // HISTORY.PUSHSTATE
+        history.pushState('', 'New URL: ' + href, href);
+        e.preventDefault();
+    });
+
+    $('.featured a').click(function (e) {
         $("#loading").show();
         href = $(this).attr("href");
 
