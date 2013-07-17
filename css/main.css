@@ -7,9 +7,9 @@
 #loading{
 	background: url('/img/ajax-loader.gif') no-repeat scroll 50% 50% transparent;
 	height: 40px; width: 40px;
-	float: left;
-	margin-top: -20px;
-	margin-left: 10px;
+	position:absolute;
+	top:42px;
+	left:2px;
 	display: none;
 }
 
