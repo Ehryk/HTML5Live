@@ -1,0 +1,122 @@
+<style>
+.items {
+margin: 50px;
+color: white;
+text-align:center;
+line-height: 60px;  
+font-size: 30px;  
+font-family: Arial, sans-serif;
+}
+
+.box1 {
+border: 20px solid black; 
+background: green;
+width: 230px;
+height: 144px;
+border-bottom-right-radius: 30px; 
+border-top-left-radius: 30px; 
+}
+
+.box1:hover {
+opacity: .70;
+-webkit-transform: scale(1.3) rotate(-10deg);
+background-color:pink;
+border-radius: 0px;   
+}
+</style>
+
+<div class="row">
+
+	<div class="live live-input">
+		<h3>Code</h3>
+	    <textarea id="html" class="code" rows="15" spellcheck="false"></textarea>
+        <a id="update" href="#" class="btn btn-success">Update &raquo;</a>
+        <a id="reset" class="btn btn-danger">Reset</a>
+        <a id="save" href="#" class="btn btn-primary">Save</a>
+	</div>
+
+	<div class="live live-output">
+		<h3>Result</h3>
+	    <div id="control">
+
+	</div>
+	</div>
+
+	<input id="original" type="hidden" />
+
+	<div class="details">
+		<h6>For Further Information:</h6>
+		
+	</div>
+
+</div>
+
+<script>
+
+    var htmlCode = '<div id="box" class="items box1">Howdy! I am a <br><b>TRANSFORM<b></div>'
+    var cssCode = '.box2 {\nborder: 20px solid black;\nbackground: green;\nwidth: 230px;\nheight: 144px;\nborder-bottom-right-radius: 30px;\nborder-top-left-radius: 30px;\n}\n.box2:hover {\nopacity: .70;\n-webkit-transform: scale(1.3) rotate(-10deg);\nbackground-color:pink;\nborder-radius: 0px;\n}'
+
+	//var original = $('#control').html().trim(); 
+	$('#html').text(cssCode);
+	$('#original').val(cssCode);
+	$('#control').html(htmlCode);
+
+	//Try to load last saved value
+	if (Modernizr.localstorage) {
+		var cssCode = localStorage.getItem("transform");
+		if (cssCode != null) {
+		    $('#control').html(htmlCode);
+		    $('#control').append('<style>'+cssCode+'</style>');
+			$('#html').val(htmlCode);
+		}
+	}
+
+	$("#update").click(function (e) {
+	    var code = $('#html').text();
+	    $('body').append('<style>' + code + '</style>');
+
+	    setTimeout(function () {
+	        $('#box').removeClass('box1').addClass('box2')
+	    }, 500);
+
+	    // $('#box').addClass('box2');        
+	    //	addEvents();
+	    //	e.preventDefault();
+	});
+
+	$("#reset").click(function (e) {
+	    var cssCode2 = '.box2 {\nborder: 20px solid black;\nbackground: green;\nwidth: 230px;\nheight: 144px;\nborder-bottom-right-radius: 30px;\nborder-top-left-radius: 30px;\n}\n.box2:hover {\nopacity: .70;\n-webkit-transform: scale(1.3) rotate(-10deg);\nbackground-color:pink;\nborder-radius: 0px;\n}'
+	    $('#html').text(cssCode2);
+	    $('#control').html(htmlCode);
+
+	    setTimeout(function () {
+	        $('#box').removeClass('box2').addClass('box1')
+	    }, 500);
+	    //	addEvents();
+	  //  e.preventDefault();
+	});
+
+	if (!Modernizr.localstorage) {
+		$("#save").css("btn");
+	} else {
+		$("#save").click(function(e) {
+		//	var code = $('#html').val(); 
+		//	localStorage.setItem("transform", code);
+		//	e.preventDefault();
+		});
+	}
+
+	function addEvents() {
+		try {
+			$("#value").text($("#transform").val());
+			$("#transform").change(function() {
+				$("#value").text($("#transform").val());
+			});
+		}
+		catch (e) {
+			console.log('Error updating value display: ' + e.message);
+		}
+	};
+	addEvents();
+
+</script>
