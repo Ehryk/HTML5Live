@@ -1,0 +1,84 @@
+
+<div class="row">
+
+	<div class="live live-input">
+		<h3>Code</h3>
+	    <textarea id="html" class="code" rows="5" spellcheck="false"></textarea>
+        <a id="update" href="#" class="btn btn-success">Update &raquo;</a>
+        <a id="reset" class="btn btn-danger">Reset</a>
+        <a id="save" href="#" class="btn btn-primary">Save</a>
+	</div>
+
+	<div class="live live-output">
+		<h3>Result</h3>
+	    <div id="control">
+URL: <input id="url" type="url" value="http://www.htmlfivelive.com" required="required" />
+	    </div>
+	    <p>Current Value: <span id="value"></span></p>
+	    <p>Valid URL: <span id="valid" class="bold"></span></p>
+	</div>
+
+	<input id="original" type="hidden" />
+
+	<div class="details">
+		<h6>For Further Information:</h6>
+		<p>W3C Documentation: <a href="http://www.w3.org/TR/html-markup/input.url.html">http://www.w3.org/TR/html-markup/input.url.html</a></p>
+	</div>
+
+</div>
+
+<script>
+	var original = $('#control').html().trim(); 
+	$('#html').text(original);
+	$('#original').val(original);
+
+	//Try to load last saved value
+	if (Modernizr.localstorage) {
+		var code = localStorage.getItem("url");
+		if (code != null) {
+			$('#control').html(code);
+			$('#html').val(code);
+		}
+	}
+
+	$("#update").click(function(e) {
+		var code = $('#html').val(); 
+		$('#control').html(code);
+		addEvents();
+		e.preventDefault();
+	});
+
+	$("#reset").click(function(e) {
+		var code = $('#original').val();
+		$('#control').html(code);
+		$('#html').val(code);
+		addEvents();
+		e.preventDefault();
+	});
+
+	if (!Modernizr.localstorage) {
+		$("#save").css("btn");
+	} else {
+		$("#save").click(function(e) {
+			var code = $('#html').val(); 
+			localStorage.setItem("url", code);
+			e.preventDefault();
+		});
+	}
+
+	function addEvents() {
+		try {
+			$("#value").text($("#url").val());
+			$("#valid").text($("#url")[0].checkValidity() ? "Yes" : "No");
+			$("#url").keyup(function() {
+				$("#value").text($("#url").val());
+				$("#valid").text($("#url")[0].checkValidity() ? "Yes" : "No");
+			});
+		}
+		catch (e) {
+			console.log('Error updating value display: ' + e.message);
+		}
+	};
+	addEvents();
+
+</script>
