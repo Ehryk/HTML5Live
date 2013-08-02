@@ -1,9 +1,31 @@
 
 <div class="row">
 
+	<script type="text/javascript">
+	//Fix Retina Display Functions
+	function fixRetinaStart() {
+		if(window.devicePixelRatio == 2) {
+			$("canvas").each(function () {
+				this.style['width'] = "180%";
+				this.style['height'] = "200%";
+				var context = this.getContext('2d');
+				//context.scale(2, 2);
+			});
+		}
+	}
+	function fixRetinaEnd() {
+		if(window.devicePixelRatio == 2) {
+			$("canvas").each(function () {
+				this.style['width'] = "90%";
+				this.style['height'] = "100%";
+			});
+		}
+	}
+	</script>
+
 	<div class="live live-input">
 		<h3>Code</h3>
-	    <textarea id="html" class="code" rows="20" spellcheck="false"></textarea>
+	    <textarea id="html" class="code" rows="25" spellcheck="false"></textarea>
         <a id="update" href="#" class="btn btn-success">Update &raquo;</a>
         <a id="reset" class="btn btn-danger">Reset</a>
         <a id="save" href="#" class="btn btn-primary">Save</a>
@@ -13,10 +35,11 @@
 		<h3>Result</h3>
 	    <div id="control">
 <canvas id="canvas" style="text-align:center;border:1px solid blue;width:90%;background-color:#FFFFFF;" title="" unselectable="on">
- Your browser does not support HTML5
+ Your browser does not support HTML5 :(
 </canvas>
 
 <script>
+ fixRetinaStart();
  var canvas = document.getElementById("canvas");
  var context = canvas.getContext('2d');
  context.strokeStyle = '#000000';
@@ -29,6 +52,7 @@
  context.arc(200, 90, 50, 0, 2*Math.PI, false);
  context.closePath();
  context.fill();
+ fixRetinaEnd();
 </script>
 	    </div>
 	</div>
