@@ -1,0 +1,77 @@
+
+<div class="row">
+
+	<div class="live live-input">
+		<h3>Code</h3>
+	    <textarea id="html" class="code" rows="15" spellcheck="false"></textarea>
+        <a id="update" href="#" class="btn btn-success">Update &raquo;</a>
+        <a id="reset" class="btn btn-danger">Reset</a>
+        <a id="save" href="#" class="btn btn-primary">Save</a>
+	</div>
+
+	<div class="live live-output">
+		<h3>Result</h3>
+	    <div id="control">
+<p><a href="http://www.ericmenze.com">My Resume</a></p>
+<p><a href="http://twitter.com/Ehryk42">Tweet at me, @Ehryk42</a></p>
+<p><a href="http://ehryk.com">My personal website</a></p>
+<p><a href="mailto:ehryk42@gmail.com">Send me some email</a></p>
+	    </div>
+	</div>
+
+	<input id="original" type="hidden" />
+
+	<div class="details">
+	</div>
+
+</div>
+
+<script>
+	var original = $('#control').html().trim(); 
+	$('#html').text(original);
+	$('#original').val(original);
+
+	//Try to load last saved value
+	if (Modernizr.localstorage) {
+		var code = localStorage.getItem("contact");
+		if (code != null) {
+			$('#control').html(code);
+			$('#html').val(code);
+		}
+	}
+
+	$("#update").click(function(e) {
+		var code = $('#html').val(); 
+		$('#control').html(code);
+		addEvents();
+        e.preventDefault();
+	});
+
+	$("#reset").click(function(e) {
+		var code = $('#original').val();
+		$('#control').html(code);
+		$('#html').val(code);
+		addEvents();
+        e.preventDefault();
+	});
+
+	if (!Modernizr.localstorage) {
+		$("#save").css("btn");
+	} else {
+		$("#save").click(function(e) {
+			var code = $('#html').val(); 
+			localStorage.setItem("contact", code);
+        	e.preventDefault();
+		});
+	}
+
+	function addEvents() {
+		try {
+		}
+		catch (e) {
+			console.log('Error adding events: ' + e.message);
+		}
+	};
+	addEvents();
+
+</script>
