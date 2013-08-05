@@ -72,11 +72,11 @@ function loadContent(url) {
         urlPage += '.html';
     console.log('Swapping: ' + urlPage);
     $("#swap").load(urlPage, function(response, status, xhr) {
-        $("#loading").hide();
-        if (status == "error") {
-            var msg = "Sorry but there was an error: ";
-            $("#error").html(msg + xhr.status + " " + xhr.statusText);
+        if (status != 'success') {
+            $("#swap").load("/sections/comingSoon.html");
+            //$("#error").html(msg + xhr.status + " " + xhr.statusText);
         }
+        $("#loading").hide();
     });
 
     // Update Nav Bar   
