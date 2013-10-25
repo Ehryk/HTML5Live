@@ -1,0 +1,108 @@
+
+<div class="row">
+
+	<div class="live live-input">
+		<h3>Code</h3>
+	    <textarea id="html" class="code" rows="15" spellcheck="false"></textarea>
+        <a id="update" href="#" class="btn btn-success">Update &raquo;</a>
+        <a id="reset" class="btn btn-danger">Reset</a>
+        <a id="save" href="#" class="btn btn-primary">Save</a>
+	</div>
+
+	<div class="live live-output">
+		<h3>Result</h3>
+	    <div id="control">
+<video id="video" width="420">
+ <source src="/Content/Skydive.mp4" type="video/mp4">
+ <source src="/Content/Skydive.wmv" type="video/wmv">
+ <object width="420">
+  <param name="movie" value="https://www.youtube.com/v/ELNln2b5M7U?version=3&autoplay=1"></param>
+  <param name="allowScriptAccess" value="always"></param>
+  <embed src="https://www.youtube.com/v/ELNln2b5M7U?version=3&autoplay=1"
+         type="application/x-shockwave-flash"
+         allowscriptaccess="always"
+         width="420"></embed>
+ </object>
+ <p>Your browser can’t play HTML5 video or Flash. <a href="/Content/Skydive.mp4">Download it</a> instead.</p>
+</video>
+	    </div>
+		<button onclick="playPause()" class="btn btn-success">Play/Pause</button> 
+		<button onclick="makeBig()" class="btn btn-primary">Big</button>
+		<button onclick="makeNormal()" class="btn btn-primary">Normal</button>
+		<button onclick="makeSmall()" class="btn btn-primary">Small</button>
+	</div>
+
+	<input id="original" type="hidden" />
+
+	<div class="details">
+		<h6>For Further Information:</h6>
+		<p>Flash Fallback: <a href="http://dev.opera.com/articles/view/simple-html5-video-flash-fallback-custom-controls/">http://dev.opera.com/articles/view/simple-html5-video-flash-fallback-custom-controls/</a></p>
+		<p>W3 Schools: <a href="http://www.w3schools.com/html/html5_video.asp">http://www.w3schools.com/html/html5_video.asp</a></p>
+		<p>W3C Documentation: <a href="http://www.w3.org/TR/html-markup/video.html">http://www.w3.org/TR/html-markup/video.html</a></p>
+	</div>
+
+</div>
+
+<script type="text/javascript"> 
+	function playPause() {
+		var video = document.getElementById("video");
+		if (video.paused) 
+			video.play(); 
+		else 
+			video.pause(); 
+	} 
+
+	function makeBig() {
+		var video = document.getElementById("video");
+		video.width=560; 
+	} 
+
+	function makeSmall() {
+		var video = document.getElementById("video");
+		video.width=320; 
+	} 
+
+	function makeNormal() {
+		var video = document.getElementById("video");
+		video.width=420; 
+	}
+</script> 
+
+<script type="text/javascript">
+	var original = $('#control').html().trim(); 
+	$('#html').text(original);
+	$('#original').val(original);
+
+	//Try to load last saved value
+	if (Modernizr.localstorage) {
+		var code = localStorage.getItem("week");
+		if (code != null) {
+			$('#control').html(code);
+			$('#html').val(code);
+		}
+	}
+
+	$("#update").click(function(e) {
+		var code = $('#html').val(); 
+		$('#control').html(code);
+		e.preventDefault();
+	});
+
+	$("#reset").click(function(e) {
+		var code = $('#original').val();
+		$('#control').html(code);
+		$('#html').val(code);
+		e.preventDefault();
+	});
+
+	if (!Modernizr.localstorage) {
+		$("#save").css("btn");
+	} else {
+		$("#save").click(function(e) {
+			var code = $('#html').val(); 
+			localStorage.setItem("week", code);
+			e.preventDefault();
+		});
+	}
+
+</script>
