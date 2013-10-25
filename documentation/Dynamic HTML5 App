@@ -1,0 +1,12 @@
+Dynamic HTML5 App
+
+Each HTML5 control: 
+Display on right
+Code on left
+Buttons: Save, Reset, Update
+
+Save: localStorage.destination
+Reset: return to default, Update
+Update: dynamically insert code
+
+Special: Canvas, SVG, Audio, Video, CSS?
